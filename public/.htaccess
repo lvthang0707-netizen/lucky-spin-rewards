@@ -1,0 +1,9 @@
+DirectoryIndex index.html
+Options -Indexes
+<FilesMatch "^(config\.php|database\.sql|config\.example\.php)$">
+  Require all denied
+</FilesMatch>
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ index.html [L]
